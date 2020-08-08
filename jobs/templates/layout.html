@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <title>{% block title %} Job Board {% endblock %} </title>
     {% endblock %}
+    {% from '_macros.html' import show_job, show_jobs with context %}
   </head>
   <body>
     <div class="container top">
