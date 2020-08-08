@@ -5,32 +5,27 @@
   </head>
   <body>
     {% macro show_job(job) %}
-      <show_job job="{{ name }}"></show_job>
-
     <div class="card adjust-height">
       <header class="card-header">
         <p class="card-header-title">
-          <a href="{{ job['title'] }}"></a>
+          <a>{{ job['title'] }}></a>
         </p>
       </header>
       <div class="card-content">
-        <div class="content">
-          <p>
-            <a href="{{ job['employer_name'] }}"></a>
-            <a href="${{ job['salary'] }}"></a>
-            <a href="{{ job['description'] }}"></a>
-          </p>
+        <div class="content">      
+            <a>{{ job['employer_name'] }}"></a><br>
+            ${{ job['salary'] }}<br>
+            {{ job['description'] }}
         </div>
       </div>
     </div>
     {% endmacro %}
+
     {% macro show_jobs(jobs) %}
-      <show_jobs job="{{ name }}"></show_jobs>
       <div class="columns is-multilines">
-      {% for in %}
+      {% for job in jobs %}
         <div class="column is-half">
-          {% for job in show_job %}
-          {% endfor %}
+          {{ show_job(job) }}
         </div>
       {% endfor %}
     </div>

@@ -7,9 +7,14 @@
   <body>
     {% extends 'layout.html' %}
     {% block content %}
-    <h1>Jobs</h1>
-    {% call show_jobs(jobs) %}
-    {% endcall %}
+      <div class="columns">
+        <div class="column">
+          <h1>Jobs</h1>
+        </div>
+        <div class="column is-one-fifth">
+        </div>
+      </div>
+      {% show_jobs(jobs) %}
     {% endblock %}
   </body>
 </html>
